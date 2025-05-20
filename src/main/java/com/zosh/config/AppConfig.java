@@ -48,7 +48,8 @@ public class AppConfig {
         cfg.setAllowedOrigins(Arrays.asList(
                 "http://localhost:3000",
                 "https://zosh-food.vercel.app",
-                "http://localhost:4200"
+                "http://localhost:4200",
+                "https://food-frontend-mbls.onrender.com"  // thêm domain frontend mới
         ));
         cfg.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         cfg.setAllowedHeaders(Collections.singletonList("*"));
@@ -60,6 +61,7 @@ public class AppConfig {
         source.registerCorsConfiguration("/**", cfg);
         return source;
     }
+
 
     @Bean
     PasswordEncoder passwordEncoder() {
