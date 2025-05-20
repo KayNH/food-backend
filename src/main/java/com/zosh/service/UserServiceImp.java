@@ -93,7 +93,11 @@ public class UserServiceImp implements  UserService{
         passwordResetTokenRepository.save(passwordResetToken);
 
         // Send an email containing the reset link
-        sendEmail(user.getEmail(), "Password Reset", "Click the following link to reset your password: http://localhost:3000/account/reset-password?token=" + resetToken);
+        sendEmail(
+                user.getEmail(),
+                "Password Reset",
+                "Click the following link to reset your password: https://food-frontend-mbls.onrender.com/account/reset-password?token=" + resetToken
+        );
     }
     private void sendEmail(String to, String subject, String message) {
         SimpleMailMessage mailMessage = new SimpleMailMessage();
