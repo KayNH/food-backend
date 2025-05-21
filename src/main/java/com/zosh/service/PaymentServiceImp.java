@@ -22,8 +22,8 @@ public class PaymentServiceImp implements PaymentService {
         SessionCreateParams params = SessionCreateParams.builder()
                 .addPaymentMethodType(SessionCreateParams.PaymentMethodType.CARD)
                 .setMode(SessionCreateParams.Mode.PAYMENT)
-                .setSuccessUrl("http://localhost:3000/payment/success/" + order.getId())
-                .setCancelUrl("http://localhost:3000/payment/fail")
+                .setSuccessUrl("https://food-frontend-mbls.onrender.com/payment/success/" + order.getId())
+                .setCancelUrl("https://food-frontend-mbls.onrender.com/payment/fail")
                 .addLineItem(
                         SessionCreateParams.LineItem.builder()
                                 .setQuantity(1L)
